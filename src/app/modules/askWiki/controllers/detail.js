@@ -5,23 +5,23 @@ class detailWikiController {
   /**
    * init loading data by route params
    */
-  constructor($scope, $routeParams, $location, wikiGrubber){
-    $scope.name = $routeParams.subject 
-    $scope.title = 'loading'
-    $scope.text = 'loading'
+  constructor($routeParams, wikiGrubber){
+    this.title = 'loading'
+    this.text = 'loading'
     wikiGrubber.details($routeParams.subject, 
-      function(data){
-        $scope.title = data.parse.title
-        $scope.text = data.parse.text["*"]
-      }
+      angular.bind(
+        this,
+        function(data){
+          this.title = data.parse.title
+          this.text = data.parse.text["*"]
+        }
+      )
     )
   }
 }
 
 detailWikiController.$inject = [
-  '$scope',
   '$routeParams',
-  '$location',
   'wikiGrubber'
 ]
 

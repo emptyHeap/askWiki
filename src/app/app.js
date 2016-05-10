@@ -22,10 +22,6 @@ let studyApp = angular.module('app',[
 studyApp.config(['$routeProvider',
   function($routerProvider) {
     $routerProvider.
-      when('/time', {
-        template: timeTemplate,
-        controller: timeController
-      }).
       when('/askWiki', {
         template: askWikiTemplate,
         controller: askWikiController
@@ -35,7 +31,7 @@ studyApp.config(['$routeProvider',
         controller: detailWikiController
       }).
       otherwise({
-        redirectTo: '/'
+        redirectTo: '/askWiki'
       })
   }
 ])

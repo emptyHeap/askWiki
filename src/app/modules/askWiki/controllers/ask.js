@@ -3,48 +3,50 @@
  * (shoud it be only for askWiki template?)
  */
 class askWikiController {
-  constructor($scope, wikiGrubber) {
-    $scope.results = []
-    $scope.query = wikiGrubber.lastQuery 
-    /**
-     * getting wiki data
-     */
-    $scope.sendRequest = () => {
-      wikiGrubber.search(
-        $scope.query,
-        $scope.requestSuccess,
-        $scope.requestError
-      ) 
-    }
+  constructor(wikiGrubber) {
+    this.query = wikiGrubber.lastQuery
+    this.results = []
 
-    /**
-     * error handler
-     * @param {Object} data - http error
-     */
-    $scope.requestError = (data) => {
-      console.log("you gotta XHR error")
-      console.log(data)
-    }
+    this.wikiGrubber = wikiGrubber
+    this.sendRequest()
+  }
 
-    /**
-     * clear cache and current result list
-     */
-    $scope.clearCacheAndData = () => {
-      $scope.results = []
-      wikiGrubber.dropCache()
-    }
+  /**
+   * getting wiki data
+   */
+  sendRequest() {
+    this.wikiGrubber.search(
+      this.query,
+      angular.bind(this, this.requestSuccess),
+      angular.bind(this, this.requestError)
+    ) 
+  }
 
-    /**
-     * success request handler
-     */
-    $scope.requestSuccess = (data) => {
-      $scope.results = data.query.search
-    }
-    
-    $scope.sendRequest()
+  /**
+   * error handler
+   * @param {Object} data - http error
+   */
+  requestError (data) {
+    console.log("you gotta XHR error")
+    console.log(data)
+  }
+
+  /**
+   * clear cache and current result list
+   */
+  clearCacheAndData () {
+    this.results = []
+    this.wikiGrubber.dropCache()
+  }
+
+  /**
+   * success request handler
+   */
+  requestSuccess (data) {
+    this.results = data.query.search
   }
 }
 
-askWikiController.$inject = ['$scope', 'wikiGrubber']
+askWikiController.$inject = ['wikiGrubber']
 
 export default askWikiController
