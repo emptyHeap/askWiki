@@ -2,8 +2,6 @@
 
 [angular-webpack](https://github.com/preboot/angular-webpack) used as seed
 
-###Time
-just show time
+### askWiki module
 
-###askWiki
-send jsonp request to wiki api and represent results 
+retrive some wiki information
