@@ -1,0 +1,12 @@
+<main>
+  <input ng-model="query" />
+  <button ng-click="sendRequest()"> search </button>
+  <button ng-click="clearCacheAndData()"> clear cache and data </button>
+  <br />
+  <ol>
+    <li ng-repeat="result in results">
+      <h3> <a ng-href="{{'#/askWiki/' + result.title}}"> {{ result.title }} </a> </h3>
+      <div ng-bind-html="result.snippet"> </div>
+    </li>
+  </ol>
+</main>
