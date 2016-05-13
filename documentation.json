@@ -1,0 +1,1328 @@
+[
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "external",
+        "description": "wikiGrubber.search",
+        "lineNumber": 1
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 10,
+        "column": 0
+      },
+      "end": {
+        "line": 13,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 0
+        },
+        "end": {
+          "line": 58,
+          "column": 1
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/controllers/ask.js",
+      "code": "// some kind of documentation\n// --------------------------\n// ### markdown yeah?\n//\n// - yeah\n// - nope\n//\n// ### we will see later\n//\n/**\n * @external wikiGrubber.search\n *\n */\n\nclass askWikiController {\n  constructor(wikiGrubber) {\n    this.query = wikiGrubber.lastQuery\n    this.results = []\n\n    this.wikiGrubber = wikiGrubber\n    this.sendRequest()\n  }\n\n  /**\n   * getting wiki data\n   */\n  sendRequest() {\n    this.wikiGrubber.search(\n      this.query,\n      angular.bind(this, this.requestSuccess),\n      angular.bind(this, this.requestError)\n    ) \n  }\n\n  /**\n   * error handler\n   * @param {Object} data - http error\n   */\n  requestError (data) {\n    console.log(\"you gotta XHR error\")\n    console.log(data)\n  }\n\n  /**\n   * clear cache and current result list\n   */\n  clearCacheAndData () {\n    this.results = []\n    this.wikiGrubber.dropCache()\n  }\n\n  /**\n   * success request handler\n   */\n  requestSuccess (data) {\n    this.results = data.query.search\n  }\n}\n\n// now will it work?\n// -----------------\n// [lol](./wikiGrubber.html)\n\naskWikiController.$inject = ['wikiGrubber']\n\nexport default askWikiController\n"
+    },
+    "external": "wikiGrubber.search",
+    "name": "askWikiController",
+    "kind": "external",
+    "members": {
+      "instance": [
+        {
+          "description": "clear cache and current result list",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 44,
+              "column": 2
+            },
+            "end": {
+              "line": 46,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 47,
+                "column": 2
+              },
+              "end": {
+                "line": 50,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/controllers/ask.js",
+            "code": "// some kind of documentation\n// --------------------------\n// ### markdown yeah?\n//\n// - yeah\n// - nope\n//\n// ### we will see later\n//\n/**\n * @external wikiGrubber.search\n *\n */\n\nclass askWikiController {\n  constructor(wikiGrubber) {\n    this.query = wikiGrubber.lastQuery\n    this.results = []\n\n    this.wikiGrubber = wikiGrubber\n    this.sendRequest()\n  }\n\n  /**\n   * getting wiki data\n   */\n  sendRequest() {\n    this.wikiGrubber.search(\n      this.query,\n      angular.bind(this, this.requestSuccess),\n      angular.bind(this, this.requestError)\n    ) \n  }\n\n  /**\n   * error handler\n   * @param {Object} data - http error\n   */\n  requestError (data) {\n    console.log(\"you gotta XHR error\")\n    console.log(data)\n  }\n\n  /**\n   * clear cache and current result list\n   */\n  clearCacheAndData () {\n    this.results = []\n    this.wikiGrubber.dropCache()\n  }\n\n  /**\n   * success request handler\n   */\n  requestSuccess (data) {\n    this.results = data.query.search\n  }\n}\n\n// now will it work?\n// -----------------\n// [lol](./wikiGrubber.html)\n\naskWikiController.$inject = ['wikiGrubber']\n\nexport default askWikiController\n"
+          },
+          "name": "clearCacheAndData",
+          "kind": "function",
+          "memberof": "askWikiController",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "askWikiController",
+            "clearCacheAndData"
+          ]
+        },
+        {
+          "description": "error handler",
+          "tags": [
+            {
+              "title": "param",
+              "description": "http error",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "Object"
+              },
+              "name": "data"
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 35,
+              "column": 2
+            },
+            "end": {
+              "line": 38,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 2
+              },
+              "end": {
+                "line": 42,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/controllers/ask.js",
+            "code": "// some kind of documentation\n// --------------------------\n// ### markdown yeah?\n//\n// - yeah\n// - nope\n//\n// ### we will see later\n//\n/**\n * @external wikiGrubber.search\n *\n */\n\nclass askWikiController {\n  constructor(wikiGrubber) {\n    this.query = wikiGrubber.lastQuery\n    this.results = []\n\n    this.wikiGrubber = wikiGrubber\n    this.sendRequest()\n  }\n\n  /**\n   * getting wiki data\n   */\n  sendRequest() {\n    this.wikiGrubber.search(\n      this.query,\n      angular.bind(this, this.requestSuccess),\n      angular.bind(this, this.requestError)\n    ) \n  }\n\n  /**\n   * error handler\n   * @param {Object} data - http error\n   */\n  requestError (data) {\n    console.log(\"you gotta XHR error\")\n    console.log(data)\n  }\n\n  /**\n   * clear cache and current result list\n   */\n  clearCacheAndData () {\n    this.results = []\n    this.wikiGrubber.dropCache()\n  }\n\n  /**\n   * success request handler\n   */\n  requestSuccess (data) {\n    this.results = data.query.search\n  }\n}\n\n// now will it work?\n// -----------------\n// [lol](./wikiGrubber.html)\n\naskWikiController.$inject = ['wikiGrubber']\n\nexport default askWikiController\n"
+          },
+          "params": [
+            {
+              "title": "param",
+              "description": "http error",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "Object"
+              },
+              "name": "data"
+            }
+          ],
+          "name": "requestError",
+          "kind": "function",
+          "memberof": "askWikiController",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "askWikiController",
+            "requestError"
+          ]
+        },
+        {
+          "description": "success request handler",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 52,
+              "column": 2
+            },
+            "end": {
+              "line": 54,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 55,
+                "column": 2
+              },
+              "end": {
+                "line": 57,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/controllers/ask.js",
+            "code": "// some kind of documentation\n// --------------------------\n// ### markdown yeah?\n//\n// - yeah\n// - nope\n//\n// ### we will see later\n//\n/**\n * @external wikiGrubber.search\n *\n */\n\nclass askWikiController {\n  constructor(wikiGrubber) {\n    this.query = wikiGrubber.lastQuery\n    this.results = []\n\n    this.wikiGrubber = wikiGrubber\n    this.sendRequest()\n  }\n\n  /**\n   * getting wiki data\n   */\n  sendRequest() {\n    this.wikiGrubber.search(\n      this.query,\n      angular.bind(this, this.requestSuccess),\n      angular.bind(this, this.requestError)\n    ) \n  }\n\n  /**\n   * error handler\n   * @param {Object} data - http error\n   */\n  requestError (data) {\n    console.log(\"you gotta XHR error\")\n    console.log(data)\n  }\n\n  /**\n   * clear cache and current result list\n   */\n  clearCacheAndData () {\n    this.results = []\n    this.wikiGrubber.dropCache()\n  }\n\n  /**\n   * success request handler\n   */\n  requestSuccess (data) {\n    this.results = data.query.search\n  }\n}\n\n// now will it work?\n// -----------------\n// [lol](./wikiGrubber.html)\n\naskWikiController.$inject = ['wikiGrubber']\n\nexport default askWikiController\n"
+          },
+          "name": "requestSuccess",
+          "kind": "function",
+          "params": [
+            {
+              "title": "param",
+              "name": "data",
+              "lineNumber": 55
+            }
+          ],
+          "memberof": "askWikiController",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "askWikiController",
+            "requestSuccess"
+          ]
+        },
+        {
+          "description": "getting wiki data",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 2
+            },
+            "end": {
+              "line": 26,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 27,
+                "column": 2
+              },
+              "end": {
+                "line": 33,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/controllers/ask.js",
+            "code": "// some kind of documentation\n// --------------------------\n// ### markdown yeah?\n//\n// - yeah\n// - nope\n//\n// ### we will see later\n//\n/**\n * @external wikiGrubber.search\n *\n */\n\nclass askWikiController {\n  constructor(wikiGrubber) {\n    this.query = wikiGrubber.lastQuery\n    this.results = []\n\n    this.wikiGrubber = wikiGrubber\n    this.sendRequest()\n  }\n\n  /**\n   * getting wiki data\n   */\n  sendRequest() {\n    this.wikiGrubber.search(\n      this.query,\n      angular.bind(this, this.requestSuccess),\n      angular.bind(this, this.requestError)\n    ) \n  }\n\n  /**\n   * error handler\n   * @param {Object} data - http error\n   */\n  requestError (data) {\n    console.log(\"you gotta XHR error\")\n    console.log(data)\n  }\n\n  /**\n   * clear cache and current result list\n   */\n  clearCacheAndData () {\n    this.results = []\n    this.wikiGrubber.dropCache()\n  }\n\n  /**\n   * success request handler\n   */\n  requestSuccess (data) {\n    this.results = data.query.search\n  }\n}\n\n// now will it work?\n// -----------------\n// [lol](./wikiGrubber.html)\n\naskWikiController.$inject = ['wikiGrubber']\n\nexport default askWikiController\n"
+          },
+          "name": "sendRequest",
+          "kind": "function",
+          "memberof": "askWikiController",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "askWikiController",
+            "sendRequest"
+          ]
+        }
+      ],
+      "static": []
+    },
+    "path": [
+      "askWikiController"
+    ]
+  },
+  {
+    "description": "Service for retriving information parts from wiki api\nand maybe cache something (i believe that feature shoud be \nmoved in other class from who wikiGrubber shoud be extended)",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 15,
+        "column": 0
+      },
+      "end": {
+        "line": 19,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 128,
+          "column": 1
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+      "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+    },
+    "name": "wikiGrubber",
+    "kind": "class",
+    "members": {
+      "instance": [
+        {
+          "description": "JSONP request with simplest ever caching",
+          "tags": [
+            {
+              "title": "param",
+              "description": "request URL (exclude &callback param)",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "url"
+            },
+            {
+              "title": "param",
+              "description": "cached type identificator\n(shoud be unique for each type of returned data)",
+              "lineNumber": 3,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "cacheType"
+            },
+            {
+              "title": "param",
+              "description": "unique object key",
+              "lineNumber": 5,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "id"
+            },
+            {
+              "title": "param",
+              "description": "JSONP success callback",
+              "lineNumber": 6,
+              "type": {
+                "type": "NameExpression",
+                "name": "successCallback"
+              },
+              "name": "success"
+            },
+            {
+              "title": "param",
+              "description": "JSONP error callback",
+              "lineNumber": 7,
+              "type": {
+                "type": "OptionalType",
+                "expression": {
+                  "type": "NameExpression",
+                  "name": "errorCallback"
+                }
+              },
+              "name": "error",
+              "default": "function(){}"
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 73,
+              "column": 2
+            },
+            "end": {
+              "line": 81,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 82,
+                "column": 2
+              },
+              "end": {
+                "line": 104,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+            "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+          },
+          "params": [
+            {
+              "title": "param",
+              "description": "request URL (exclude &callback param)",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "url"
+            },
+            {
+              "title": "param",
+              "description": "cached type identificator\n(shoud be unique for each type of returned data)",
+              "lineNumber": 3,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "cacheType"
+            },
+            {
+              "title": "param",
+              "description": "unique object key",
+              "lineNumber": 5,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "id"
+            },
+            {
+              "title": "param",
+              "description": "JSONP success callback",
+              "lineNumber": 6,
+              "type": {
+                "type": "NameExpression",
+                "name": "successCallback"
+              },
+              "name": "success"
+            },
+            {
+              "title": "param",
+              "description": "JSONP error callback",
+              "lineNumber": 7,
+              "type": {
+                "type": "OptionalType",
+                "expression": {
+                  "type": "NameExpression",
+                  "name": "errorCallback"
+                }
+              },
+              "name": "error",
+              "default": "function(){}"
+            }
+          ],
+          "name": "cJSONP",
+          "kind": "function",
+          "memberof": "wikiGrubber",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "wikiGrubber",
+            "cJSONP"
+          ]
+        },
+        {
+          "description": "Create a wiki grubber service\nrequire $http",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 2
+            },
+            "end": {
+              "line": 24,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 2
+              },
+              "end": {
+                "line": 30,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+            "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+          },
+          "name": "constructor",
+          "kind": "function",
+          "params": [
+            {
+              "title": "param",
+              "name": "$http",
+              "lineNumber": 25
+            }
+          ],
+          "memberof": "wikiGrubber",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "wikiGrubber",
+            "constructor"
+          ]
+        },
+        {
+          "description": "calculate cache size, remove oldest cached objects if size more than",
+          "tags": [
+            {
+              "title": "param",
+              "description": null,
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "int"
+              },
+              "name": "this.approximateCacheSize"
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 105,
+              "column": 2
+            },
+            "end": {
+              "line": 108,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 109,
+                "column": 2
+              },
+              "end": {
+                "line": 120,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+            "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+          },
+          "params": [
+            {
+              "title": "param",
+              "description": null,
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "int"
+              },
+              "name": "this.approximateCacheSize"
+            }
+          ],
+          "name": "cSizeControll",
+          "kind": "function",
+          "memberof": "wikiGrubber",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "wikiGrubber",
+            "cSizeControll"
+          ]
+        },
+        {
+          "description": "Retrive article about subject from wiki",
+          "tags": [
+            {
+              "title": "param",
+              "description": "retriving from wiki subject full-name (title)",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "subject"
+            },
+            {
+              "title": "param",
+              "description": "...successAndError - success and error callbacks",
+              "lineNumber": 3,
+              "type": {
+                "type": "RestType",
+                "expression": {
+                  "type": "NameExpression",
+                  "name": "function"
+                }
+              },
+              "name": null,
+              "errors": [
+                "Missing or invalid tag name"
+              ]
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 39,
+              "column": 2
+            },
+            "end": {
+              "line": 43,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 2
+              },
+              "end": {
+                "line": 54,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+            "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+          },
+          "params": [
+            {
+              "title": "param",
+              "description": "retriving from wiki subject full-name (title)",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "subject"
+            },
+            {
+              "title": "param",
+              "name": "successAndError",
+              "lineNumber": 44,
+              "type": {
+                "type": "RestType"
+              }
+            }
+          ],
+          "name": "details",
+          "kind": "function",
+          "memberof": "wikiGrubber",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "wikiGrubber",
+            "details"
+          ]
+        },
+        {
+          "description": "Drop all cached data",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 32,
+              "column": 2
+            },
+            "end": {
+              "line": 34,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 35,
+                "column": 2
+              },
+              "end": {
+                "line": 37,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+            "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+          },
+          "name": "dropCache",
+          "kind": "function",
+          "memberof": "wikiGrubber",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "wikiGrubber",
+            "dropCache"
+          ]
+        },
+        {
+          "description": "Retrive article list from wiki",
+          "tags": [
+            {
+              "title": "param",
+              "description": "search query",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "query"
+            },
+            {
+              "title": "param",
+              "description": "...successAndError - success and error callbacks",
+              "lineNumber": 3,
+              "type": {
+                "type": "TypeApplication",
+                "expression": {
+                  "type": "NameExpression",
+                  "name": "Array"
+                },
+                "applications": [
+                  {
+                    "type": "NameExpression",
+                    "name": "function"
+                  }
+                ]
+              },
+              "name": null,
+              "errors": [
+                "Missing or invalid tag name"
+              ]
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 56,
+              "column": 2
+            },
+            "end": {
+              "line": 60,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 61,
+                "column": 2
+              },
+              "end": {
+                "line": 71,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+            "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+          },
+          "params": [
+            {
+              "title": "param",
+              "description": "search query",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "string"
+              },
+              "name": "query"
+            },
+            {
+              "title": "param",
+              "name": "successAndError",
+              "lineNumber": 61,
+              "type": {
+                "type": "RestType"
+              }
+            }
+          ],
+          "name": "search",
+          "kind": "function",
+          "memberof": "wikiGrubber",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "wikiGrubber",
+            "search"
+          ]
+        }
+      ],
+      "static": [
+        {
+          "description": "Factory",
+          "tags": [
+            {
+              "title": "return",
+              "description": "instance",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "wikiGrubber"
+              }
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 121,
+              "column": 2
+            },
+            "end": {
+              "line": 124,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 125,
+                "column": 2
+              },
+              "end": {
+                "line": 127,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+            "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+          },
+          "returns": [
+            {
+              "title": "return",
+              "description": "instance",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "wikiGrubber"
+              }
+            }
+          ],
+          "name": "wikiGrubberFactory",
+          "kind": "function",
+          "params": [
+            {
+              "title": "param",
+              "name": "something",
+              "lineNumber": 125,
+              "type": {
+                "type": "RestType"
+              }
+            }
+          ],
+          "memberof": "wikiGrubber",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "wikiGrubber",
+            "wikiGrubberFactory"
+          ]
+        }
+      ]
+    },
+    "path": [
+      "wikiGrubber"
+    ]
+  },
+  {
+    "description": "stupido controller for detailWiki template",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 1
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/controllers/detail.js",
+      "code": "/**\n * stupido controller for detailWiki template\n */\nclass detailWikiController {\n  /**\n   * init loading data by route params\n   */\n  constructor($routeParams, wikiGrubber){\n    this.title = 'loading'\n    this.text = 'loading'\n    wikiGrubber.details($routeParams.subject, \n      angular.bind( this, this.showInfo)\n    )\n  }\n  showInfo(data){\n    this.title = data.parse.title\n    this.text = data.parse.text[\"*\"]\n  }\n}\n\ndetailWikiController.$inject = [\n  '$routeParams',\n  'wikiGrubber'\n]\n\nexport default detailWikiController\n"
+    },
+    "name": "detailWikiController",
+    "kind": "class",
+    "members": {
+      "instance": [
+        {
+          "description": "init loading data by route params",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 2
+            },
+            "end": {
+              "line": 7,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 2
+              },
+              "end": {
+                "line": 14,
+                "column": 3
+              }
+            },
+            "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/controllers/detail.js",
+            "code": "/**\n * stupido controller for detailWiki template\n */\nclass detailWikiController {\n  /**\n   * init loading data by route params\n   */\n  constructor($routeParams, wikiGrubber){\n    this.title = 'loading'\n    this.text = 'loading'\n    wikiGrubber.details($routeParams.subject, \n      angular.bind( this, this.showInfo)\n    )\n  }\n  showInfo(data){\n    this.title = data.parse.title\n    this.text = data.parse.text[\"*\"]\n  }\n}\n\ndetailWikiController.$inject = [\n  '$routeParams',\n  'wikiGrubber'\n]\n\nexport default detailWikiController\n"
+          },
+          "name": "constructor",
+          "kind": "function",
+          "params": [
+            {
+              "title": "param",
+              "name": "$routeParams",
+              "lineNumber": 8
+            },
+            {
+              "title": "param",
+              "name": "wikiGrubber",
+              "lineNumber": 8
+            }
+          ],
+          "memberof": "detailWikiController",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "detailWikiController",
+            "constructor"
+          ]
+        }
+      ],
+      "static": []
+    },
+    "path": [
+      "detailWikiController"
+    ]
+  },
+  {
+    "description": "replace relative links to absolute to absolute with passed parameter\nas prefix",
+    "tags": [
+      {
+        "title": "param",
+        "description": "filter input",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "html"
+      },
+      {
+        "title": "param",
+        "description": "prefix for absolute links or http domain name",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "domain"
+      },
+      {
+        "title": "return",
+        "description": "with only absolute links",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 4,
+        "column": 6
+      },
+      "end": {
+        "line": 10,
+        "column": 9
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 6
+        },
+        "end": {
+          "line": 16,
+          "column": 7
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/filters.js",
+      "code": "angular.module('askWikiFilters', []).\n  filter('relativeToDomain', () => {\n    return (\n      /**\n       * replace relative links to absolute to absolute with passed parameter\n       * as prefix\n       * @param {string} html filter input\n       * @param {string} domain - prefix for absolute links or http domain name\n       * @return {string} with only absolute links\n       */\n      (html, domain) => {\n        if (domain.indexOf(\"http\")){\n          html = \"http://\" + html\n        }\n        return html.replace(/(href=\")\\//g, '$1' + domain + '/')\n      }\n    )\n  }).\n  filter('hrefToAppCommand', () => {\n    return (\n      /**\n       * modify wiki articles content to change relative links\n       * @param {string} html modifying html code\n       * @return {string} html code with modified links\n       */\n      (html) => {\n        return html.replace(/(href=\")\\/[^\"]*\\/([^\"]*\")/g, '$1#askWiki/$2' )\n      }\n    ) \n  }).\n  filter('regexpReplace', () => {\n    return ( \n      /**\n       * js replace function\n       * @param {string} input filter input\n       * @param {...string} ..params parameters for javascript replace function\n       * @return modified string\n       */ \n      (input, ...params) => {\n        return input.replace(...params)\n      }\n    )\n  })\n"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "filter input",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "html"
+      },
+      {
+        "title": "param",
+        "description": "prefix for absolute links or http domain name",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "domain"
+      }
+    ],
+    "returns": [
+      {
+        "title": "return",
+        "description": "with only absolute links",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      }
+    ],
+    "name": "html",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "html"
+    ]
+  },
+  {
+    "description": "modify wiki articles content to change relative links",
+    "tags": [
+      {
+        "title": "param",
+        "description": "modifying html code",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "html"
+      },
+      {
+        "title": "return",
+        "description": "html code with modified links",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 21,
+        "column": 6
+      },
+      "end": {
+        "line": 25,
+        "column": 9
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 6
+        },
+        "end": {
+          "line": 28,
+          "column": 7
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/filters.js",
+      "code": "angular.module('askWikiFilters', []).\n  filter('relativeToDomain', () => {\n    return (\n      /**\n       * replace relative links to absolute to absolute with passed parameter\n       * as prefix\n       * @param {string} html filter input\n       * @param {string} domain - prefix for absolute links or http domain name\n       * @return {string} with only absolute links\n       */\n      (html, domain) => {\n        if (domain.indexOf(\"http\")){\n          html = \"http://\" + html\n        }\n        return html.replace(/(href=\")\\//g, '$1' + domain + '/')\n      }\n    )\n  }).\n  filter('hrefToAppCommand', () => {\n    return (\n      /**\n       * modify wiki articles content to change relative links\n       * @param {string} html modifying html code\n       * @return {string} html code with modified links\n       */\n      (html) => {\n        return html.replace(/(href=\")\\/[^\"]*\\/([^\"]*\")/g, '$1#askWiki/$2' )\n      }\n    ) \n  }).\n  filter('regexpReplace', () => {\n    return ( \n      /**\n       * js replace function\n       * @param {string} input filter input\n       * @param {...string} ..params parameters for javascript replace function\n       * @return modified string\n       */ \n      (input, ...params) => {\n        return input.replace(...params)\n      }\n    )\n  })\n"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "modifying html code",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "html"
+      }
+    ],
+    "returns": [
+      {
+        "title": "return",
+        "description": "html code with modified links",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      }
+    ],
+    "name": "html",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "html"
+    ]
+  },
+  {
+    "description": "js replace function",
+    "tags": [
+      {
+        "title": "param",
+        "description": "filter input",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "input"
+      },
+      {
+        "title": "param",
+        "description": "..params parameters for javascript replace function",
+        "lineNumber": 3,
+        "type": {
+          "type": "RestType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "string"
+          }
+        },
+        "name": null,
+        "errors": [
+          "Missing or invalid tag name"
+        ]
+      },
+      {
+        "title": "return",
+        "description": "modified string",
+        "lineNumber": 4,
+        "type": null
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 33,
+        "column": 6
+      },
+      "end": {
+        "line": 38,
+        "column": 9
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 39,
+          "column": 6
+        },
+        "end": {
+          "line": 41,
+          "column": 7
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/filters.js",
+      "code": "angular.module('askWikiFilters', []).\n  filter('relativeToDomain', () => {\n    return (\n      /**\n       * replace relative links to absolute to absolute with passed parameter\n       * as prefix\n       * @param {string} html filter input\n       * @param {string} domain - prefix for absolute links or http domain name\n       * @return {string} with only absolute links\n       */\n      (html, domain) => {\n        if (domain.indexOf(\"http\")){\n          html = \"http://\" + html\n        }\n        return html.replace(/(href=\")\\//g, '$1' + domain + '/')\n      }\n    )\n  }).\n  filter('hrefToAppCommand', () => {\n    return (\n      /**\n       * modify wiki articles content to change relative links\n       * @param {string} html modifying html code\n       * @return {string} html code with modified links\n       */\n      (html) => {\n        return html.replace(/(href=\")\\/[^\"]*\\/([^\"]*\")/g, '$1#askWiki/$2' )\n      }\n    ) \n  }).\n  filter('regexpReplace', () => {\n    return ( \n      /**\n       * js replace function\n       * @param {string} input filter input\n       * @param {...string} ..params parameters for javascript replace function\n       * @return modified string\n       */ \n      (input, ...params) => {\n        return input.replace(...params)\n      }\n    )\n  })\n"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "filter input",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "input"
+      },
+      {
+        "title": "param",
+        "name": "params",
+        "lineNumber": 39,
+        "type": {
+          "type": "RestType"
+        }
+      }
+    ],
+    "returns": [
+      {
+        "title": "return",
+        "description": "modified string",
+        "lineNumber": 4,
+        "type": null
+      }
+    ],
+    "name": "input",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "input"
+    ]
+  },
+  {
+    "description": "http error callback",
+    "tags": [
+      {
+        "title": "callback",
+        "description": "wikiGrubber~errorCallback",
+        "lineNumber": 2
+      },
+      {
+        "title": "param",
+        "description": "error info",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "data"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 9,
+        "column": 0
+      },
+      "end": {
+        "line": 13,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 128,
+          "column": 1
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+      "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+    },
+    "callback": "wikiGrubber~errorCallback",
+    "params": [
+      {
+        "title": "param",
+        "description": "error info",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "data"
+      }
+    ],
+    "name": "wikiGrubber~errorCallback",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "wikiGrubber~errorCallback"
+    ]
+  },
+  {
+    "description": "http success callback",
+    "tags": [
+      {
+        "title": "callback",
+        "description": "wikiGrubber~successCallback",
+        "lineNumber": 2
+      },
+      {
+        "title": "param",
+        "description": "json from server",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "data"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 3,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 128,
+          "column": 1
+        }
+      },
+      "file": "/home/konstantin/temp/study/angular/askWiki/src/app/modules/askWiki/services/wikiGrubber.js",
+      "code": "import sizeof from 'object-sizeof'\n\n/**\n * http success callback\n * @callback wikiGrubber~successCallback\n * @param {Object} data - json from server\n */\n\n/**\n * http error callback\n * @callback wikiGrubber~errorCallback\n * @param {Object} data - error info\n */\n\n/**\n * Service for retriving information parts from wiki api\n * and maybe cache something (i believe that feature shoud be \n * moved in other class from who wikiGrubber shoud be extended)\n */\nclass wikiGrubber {\n  /**\n   * Create a wiki grubber service\n   * require $http\n   */\n  constructor($http){\n    this.cache = {}\n    this.approximateCacheSize = 4 * 1024 * 1024\n    this.http = $http\n    this.lastQuery = \"looking for something?\"\n  }\n\n  /**\n   * Drop all cached data\n   */\n  dropCache(){\n    this.cache = {}\n  }\n\n  /**\n   * Retrive article about subject from wiki\n   * @param {string} subject - retriving from wiki subject full-name (title)\n   * @param {...function} ...successAndError - success and error callbacks\n   */\n  details(subject, ...successAndError){\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' + \n      'action=parse&section=0&prop=text&page=' +\n      subject +\n      '&utf8=true&format=json',\n      'details',\n      subject,\n      ...successAndError\n    )\n  }\n\n  /**\n   * Retrive article list from wiki\n   * @param {string} query - search query\n   * @param {function[]} ...successAndError - success and error callbacks\n   */\n  search(query, ...successAndError){\n    this.lastQuery = query\n    this.cJSONP(\n      'https://en.wikipedia.org/w/api.php?' +\n      'action=query&list=search&srsearch=' + \n      query +\n      '&utf8=true&format=json',\n      'search',\n      query,\n      ...successAndError)\n  }\n\n  /**\n   * JSONP request with simplest ever caching\n   * @param {string} url - request URL (exclude &callback param)\n   * @param {string} cacheType - cached type identificator\n   * (shoud be unique for each type of returned data)\n   * @param {string} id - unique object key\n   * @param {successCallback} success - JSONP success callback\n   * @param {errorCallback} [error=function(){}] - JSONP error callback\n   */\n  cJSONP(url, cacheType, id, success, error = function(){}){\n    if (!this.cache[cacheType]) { this.cache[cacheType] = {} }\n    if (this.cache[cacheType][id]) {\n      success(this.cache[cacheType][id])\n    } else {\n      this.http.jsonp(\n        url + '&callback=JSON_CALLBACK'\n      ).\n      success(\n        angular.bind(\n          this,\n          function(data){\n            this.cache[cacheType][id] = data\n            success(data) \n          }\n        )\n      ).\n      error(\n        error\n      )\n    }\n    this.cSizeControll()\n  }\n  /**\n   * calculate cache size, remove oldest cached objects if size more than \n   * @param {int} this.approximateCacheSize\n   */\n  cSizeControll(){\n    if (sizeof(this.cache) > this.approximateCacheSize){\n      for (var key in this.cache) {\n        for (var cacheType in this.cache[key]) {\n          delete this.cache.details[key]\n            delete this.cache.details[key]\n            break\n        }\n      }\n    }\n\n  }\n  /**\n   * Factory\n   * @return {wikiGrubber} instance\n   */\n  static wikiGrubberFactory(...something){\n    return new wikiGrubber(...something);\n  }\n}\n\nwikiGrubber.wikiGrubberFactory.$inject = [\n  '$http'\n]\n\nexport default wikiGrubber\n"
+    },
+    "callback": "wikiGrubber~successCallback",
+    "params": [
+      {
+        "title": "param",
+        "description": "json from server",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "data"
+      }
+    ],
+    "name": "wikiGrubber~successCallback",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "wikiGrubber~successCallback"
+    ]
+  }
+]
